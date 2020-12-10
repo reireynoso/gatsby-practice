@@ -29,3 +29,8 @@ const data = useStaticQuery(graphql`
 - Specific page for posts. Create `gatsby-node.js` to tap into node apis. `onCreateNode` new data on individual node.
 - `createPages` plugin needed to dynamically create pages for the site in `gatsby-node`
 - Set up a dynamic graphql query. Query needs to accept the slug and give back the data for the associated blog post.
+
+- Handling pics on markdowns. `npm install gatsby-plugin-sharp`, allows us to use the sharp library inside of the gatsby site. `npm install gatsby-remark-images` allows us to usse images inside of markdown. `npm install gatsby-remark-relative-images`, allows us to source images relative to the source file.
+- Go to `gatsby-config` file and adjust
+
+- Hook gatsby with contentful, create an account. Use contentful as a webapp to manage our site content. We have content models and individual content themselves

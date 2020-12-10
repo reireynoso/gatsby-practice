@@ -5,6 +5,8 @@ date: "2019-04-04"
 
 I'm learning a new concept!
 
+![Grass](./grasspic.jpeg)
+
 ## Topics Covered
 
 1. Gatsby
