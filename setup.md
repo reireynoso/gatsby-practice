@@ -27,3 +27,5 @@ const data = useStaticQuery(graphql`
 - Adjust `package.json` develop property, `"develop": "env-cmd .env.development gatsby develop"`
 - Parse markdown files with `npm install gatsby-transformer-remark`
 - Specific page for posts. Create `gatsby-node.js` to tap into node apis. `onCreateNode` new data on individual node.
+- `createPages` plugin needed to dynamically create pages for the site in `gatsby-node`
+- Set up a dynamic graphql query. Query needs to accept the slug and give back the data for the associated blog post.
