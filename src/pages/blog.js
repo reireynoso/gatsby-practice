@@ -4,24 +4,42 @@ import {Link, useStaticQuery, graphql} from 'gatsby';
 import blogStyles from './blog.module.scss';
 
 export default () => {
+    // const data = useStaticQuery(graphql`
+    // query {
+    //     allMarkdownRemark {
+    //       edges {
+    //         node {
+    //           fields {
+    //             slug
+    //           }
+    //           frontmatter {
+    //             title
+    //             date
+    //           }
+    //           html
+    //           excerpt
+    //         }
+    //       }
+    //     }
+    //   }
+    // `)
     const data = useStaticQuery(graphql`
     query {
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                date
-              }
-              html
-              excerpt
-            }
+      allContentfulBlogPost(
+        sort: {
+          fields: publishedDate,
+          order: DESC
+        }
+      ) {
+        edges {
+          node {
+            title
+            slug
+            publishedDate(formatString:"MMMM Do YYYY")
           }
         }
-      }
+      }  
+    }
     `)
     return (
         <div>
@@ -30,15 +48,15 @@ export default () => {
                 <p>Posts will show up here later on.</p>
                 <ol className={blogStyles.posts}>
                     {
-                        data.allMarkdownRemark.edges.map(edge => {
+                        data.allContentfulBlogPost.edges.map(edge => {
                             return (
                                 <li className={blogStyles.post}>
                                     
-                                    <Link to={`/blog/${edge.node.fields.slug}`}>
+                                    <Link to={`/blog/${edge.node.slug}`}>
                                       <h2>
-                                        {edge.node.frontmatter.title}
+                                        {edge.node.title}
                                       </h2>  
-                                      <p>{edge.node.frontmatter.date}</p>
+                                      <p>{edge.node.publishedDate}</p>
                                     </Link>
                                 </li>
                             )

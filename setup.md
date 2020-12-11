@@ -34,3 +34,6 @@ const data = useStaticQuery(graphql`
 - Go to `gatsby-config` file and adjust
 
 - Hook gatsby with contentful, create an account. Use contentful as a webapp to manage our site content. We have content models and individual content themselves
+- Adjust queries to match contentful
+
+- To read json and reich text field through react, `npm install @contentful/rich-text-react-renderer`
