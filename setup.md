@@ -37,3 +37,8 @@ const data = useStaticQuery(graphql`
 - Adjust queries to match contentful
 
 - To read json and reich text field through react, `npm install @contentful/rich-text-react-renderer`
+
+- Customizing own 404 page. Create under pages directory. It will display once in production
+- Customize head of document and set up things like page titles. React library, `helmet`. Look for gatsby plugin first
+
+- Deploying Gatsby with Netlify

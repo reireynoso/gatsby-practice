@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import {Link, useStaticQuery, graphql} from 'gatsby';
 import blogStyles from './blog.module.scss';
+import Head from '../components/head';
 
 export default () => {
     // const data = useStaticQuery(graphql`
@@ -44,6 +45,7 @@ export default () => {
     return (
         <div>
             <Layout>
+                <Head title="Blog"/>
                 <h1>Blog</h1>
                 <p>Posts will show up here later on.</p>
                 <ol className={blogStyles.posts}>
